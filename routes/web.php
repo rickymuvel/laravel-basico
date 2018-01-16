@@ -12,15 +12,15 @@
 */
 
 Route::get('/', function () {
-    echo "<a href='contactos'>Contacto</a><br>";
-    echo "<a href='contactos'>Contacto</a><br>";
-    echo "<a href='contactos'>Contacto</a><br>";
-    echo "<a href='contactos'>Contacto</a><br>";
-    echo "<a href='contactos'>Contacto</a><br>";
+    echo "<a href=". route('contactos') .">Contacto</a><br>";
+    echo "<a href=". route('contactos') .">Contacto</a><br>";
+    echo "<a href=". route('contactos') .">Contacto</a><br>";
+    echo "<a href=". route('contactos') .">Contacto</a><br>";
+    echo "<a href=". route('contactos') .">Contacto</a><br>";
 });
 
 
-Route::get('contacto', ['as' => 'contactos', function(){
+Route::get('contactanos', ['as' => 'contactos', function(){
 	return "Sección de contactos";
 }]);
 
