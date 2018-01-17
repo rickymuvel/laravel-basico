@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Contactos</title>
+	<title>Mi sitio</title>
 </head>
 <body>
-	<h1>Contactos</h1>
 	<header>
 		<nav>
 			<a href="<?php echo route('home')?>">Inicio</a>
@@ -13,5 +12,7 @@
 			<a href="<?php echo route('contactos')?>">Contacto</a>
 		</nav>
 	</header>
+	@yield('contenido')
+	<footer>Copyright &copy; {{ date('Y') }}</footer>
 </body>
 </html>
