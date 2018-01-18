@@ -9,8 +9,10 @@ class PagesController extends Controller
 {
 	protected $request;
 
-	public function __construct(Request $request){
-		$this->request = $request;
+	public function __construct(){
+        // Accedemos a la propiedad middleware que heredamos de nuestro Controller base.
+		$this->middleware('example', ['only' => ['home']]); // Este middleware se aplica a todos los métodos de se controlador. 
+        // La forma de arriba ha fallado, y no encuentro la razón.
 	}
 
     public function home()

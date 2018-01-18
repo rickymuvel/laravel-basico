@@ -6,6 +6,8 @@
 	<h3> {{ session('info') }} </h3>
 @else 
 <form action="contacto" method="post">
+<!-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
+{!! csrf_field() !!}
 	<div>
 		<label for="nombre">
 			Nombre
