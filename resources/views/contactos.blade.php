@@ -2,6 +2,9 @@
 
 @section('contenido')
 <h1>Contactos</h1>
+@if( session()->has('info'))
+	<h3> {{ session('info') }} </h3>
+@else 
 <form action="contacto" method="post">
 	<div>
 		<label for="nombre">
@@ -29,4 +32,6 @@
 	</div>
 
 </form>
+@endif
+
 @stop

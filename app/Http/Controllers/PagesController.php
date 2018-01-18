@@ -16,6 +16,10 @@ class PagesController extends Controller
     public function home()
     {
     	return view('home');
+        // return response('Contenido de la respuesta', 201)
+        //                     ->header('X-TOKEN', 'secret')
+        //                     ->header('X-TOKEN2', 'secret2')
+        //                     ->cookie('X-COOKIE', 'cookie');
     }
 
     public function contact()
@@ -40,8 +44,16 @@ class PagesController extends Controller
 
     public function mensajes(CreateMessageRequest $request)
     {
+        $data = $request->all();
         // Ahora la validación se hará usando la clase CreateMessageRequest
         // Si la condicion no se cumple, Laravel automáticamente reenviará al formulario.
-        return $request->all();
+        // return $request->all();
+        // return redirect('/');
+        // return redirect()
+        //             ->route('contactos')
+        //             ->with('info', 'Tu mensaje ha sido enviado correctamente');
+        return back()->with('info', 'Tu mensaje ha sido enviado correctamente');
+        // return response()->json(['data' => $data ], 202)->header('TOKEN', 'secret');
+
     }
 }
