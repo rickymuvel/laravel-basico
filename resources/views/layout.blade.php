@@ -23,10 +23,11 @@
 		}
 		?>
 		<nav>
-			<a class="{{ activeMenu('/') }}" href="<?php echo route('home')?>">Inicio</a>
-			<!-- <a class="{{ request()->is('saludos/ricky') ? 'active' : ''}}" href="<?php echo route('saludos', 'ricky')?>">Saludo</a> -->
-			<a class="{{ activeMenu('saludos/*') }}" href="<?php echo route('saludos', 'ricky')?>">Saludo</a>
-			<a class="{{ activeMenu('contactanos') }}" href="<?php echo route('contactos')?>">Contacto</a>
+			<a class="{{ activeMenu('/') }}" href="{{route('home')}}">Inicio</a>
+			<!-- <a class="{{ request()->is('saludos/ricky') ? 'active' : ''}}" href="{{route('saludos', 'ricky')}}">Saludo</a> -->
+			<a class="{{ activeMenu('saludos/*') }}" href="{{route('saludos', 'ricky')}}">Saludo</a>
+			<a class="{{ activeMenu('mensajes/create') }}" href="{{route('messages.create')}}">Contacto</a>
+			<a class="{{ activeMenu('mensajes') }}" href="{{route('messages.index')}}">Mensajes</a>
 		</nav>
 	</header>
 	@yield('contenido')
