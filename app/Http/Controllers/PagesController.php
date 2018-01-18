@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Http\Requests\CreateMessageRequest;
 
 class PagesController extends Controller
 {
@@ -37,13 +38,10 @@ class PagesController extends Controller
 		return view('saludo', compact('nombre', 'html', 'script', 'consolas'));
     }
 
-    public function mensajes(Request $request)
+    public function mensajes(CreateMessageRequest $request)
     {
-        // return $this->request->all();
-        if($request->has('nombre')){
-            return 'El nombre es '. $request->input('nombre');
-        }else{
-            return 'No tiene nombre';
-        }
+        // Ahora la validación se hará usando la clase CreateMessageRequest
+        // Si la condicion no se cumple, Laravel automáticamente reenviará al formulario.
+        return $request->all();
     }
 }
